@@ -23,10 +23,9 @@ sudo systemctl enable --now sshd
 # additional 5 points
 # 1. create backup user for next task
 sudo useradd backup
-# 2. create rules for /archive
-sudo mkdir -p /archive
-sudo chown backup -R /archive
-sudo chmod 500 -R /archive
+# 2. enabling rdp and installing GUI
+sudo apt install -y xfce4 xrdp
+echo xfce4-session >$HOME/.xsession
 # 3. create custom ~/.bashrc
 cat <<EOF >$HOME/.bashrc
 alias ll='ls -lh'
