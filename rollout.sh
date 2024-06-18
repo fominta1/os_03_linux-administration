@@ -27,7 +27,7 @@ sudo useradd backup
 sudo apt install -y xfce4 xrdp
 echo xfce4-session >$HOME/.xsession
 # 3. create custom ~/.bashrc
-cat <<EOF >$HOME/.bashrc
+cat <<'EOF' >>$HOME/.bashrc
 alias ll='ls -lh'
 alias la='ll -A'
 EOF
