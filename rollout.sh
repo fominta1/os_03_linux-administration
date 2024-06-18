@@ -13,7 +13,7 @@ fi
 # update & install apache + ssh + python
 
 sudo apt update && sudo apt upgrade -y
-sudo apt install -y ssh apache2 python3-{pip,venv}
+sudo apt install -y ssh apache2 python3-{pip,venv} curl
 
 # enable ssh and apache
 
@@ -37,7 +37,7 @@ source $HOME/.bashrc
 
 # making script
 sudo mkdir /opt
-cat <<EOF >$HOME/getip.sh
+cat <<'EOF' >$HOME/getip.sh
 echo $(date +%Y-%m-%d_%H%M%S) > /archive/iplog.txt
 curl ifconfig.co >> /archive/iplog.txt
 EOF
