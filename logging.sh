@@ -4,8 +4,14 @@
 sudo apt update
 sudo apt install -y logwatch mailutils
 
-# ! ATTENTION !
-# !!! TO GOOGLE AND REWRITE LOGWATCH COMMAND !!!
+sudo cp /usr/share/logwatch/default.conf/logwatch.conf /etc/logwatch/conf/
+Output = mail
+MailTo = fominta1@mydomain.org
+MailFrom = logwatch@host1.mydomain.org
+Detail = Low
+Service = All
+
+
 # prepare email template and logwatch command, save as script
 cat <<EOF >$HOME/logwatch.sh
 logwatch --detail Med --mailto root --service all --range today
