@@ -9,6 +9,7 @@ tar cpf "/archive/backup-\$(date +%Y-%m-%d_%H%M%S).tar" --exclude="\$HOME/.*" /e
 EOF
 sudo mkdir -p /archive
 sudo mv $HOME/backup.sh /archive/
+sudo chmod +x /archive/backup.sh
 
 # create cron job
 if ! sudo crontab -l | grep -q '30 18 \* \* 5 /archive/backup.sh';
